@@ -1,16 +1,17 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import logo from "../assets/logo.png"
 
-const Login = () => {
+const Signup = () => {
+  const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [rememberMe, setRememberMe] = useState(false)
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [agreeToTerms, setAgreeToTerms] = useState(false)
 
   return (
     <div className="min-h-screen w-full flex flex-col">
       <div className="flex flex-1 w-full">
-        {/* Left Section - Login Form */}
+        {/* Left Section - Signup Form */}
         <div className="w-full lg:w-1/2 bg-white flex items-center justify-center px-4 sm:px-6 md:px-8 py-8 sm:py-12">
           <div className="w-full max-w-md">
             {/* Title */}
@@ -18,18 +19,33 @@ const Login = () => {
               <div className="w-1 h-24 sm:h-32 bg-[#C41E5B] mt-1"></div>
               <div className='h-24 sm:h-32 flex flex-col items-start justify-center'>
                 <h1 className="font-bold">
-                  <span className="text-2xl sm:text-3xl md:text-4xl bg-gradient-to-r from-[#C2185B] to-[#5BA3D6] bg-clip-text text-transparent">Welcome back</span>
+                  <span className="text-2xl sm:text-3xl md:text-4xl bg-gradient-to-r from-[#C2185B] to-[#5BA3D6] bg-clip-text text-transparent">Create account</span>
                 </h1>
                 <h1 className="text-base text-gray-500 mt-2">
                   <span className='text-base sm:text-lg md:text-xl'>
-                    Enter your email and password to sign in
+                    Enter your details to create your account
                   </span>
                 </h1>
               </div>
             </div>
 
-            {/* Email Input */}
+            {/* Full Name Input */}
             <div className="mb-5 mt-6 sm:mt-8">
+              <label htmlFor="fullName" className="block text-left text-sm font-semibold text-gray-700 mb-2">
+                Full Name
+              </label>
+              <input
+                placeholder='John Doe'
+                type="text"
+                id="fullName"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C41E5B] focus:border-transparent text-gray-700"
+              />
+            </div>
+
+            {/* Email Input */}
+            <div className="mb-5">
               <label htmlFor="email" className="block text-left text-sm font-semibold text-gray-700 mb-2">
                 Email
               </label>
@@ -44,7 +60,7 @@ const Login = () => {
             </div>
 
             {/* Password Input */}
-            <div className="mb-4">
+            <div className="mb-5">
               <label htmlFor="password" className="block text-left text-sm font-semibold text-gray-700 mb-2">
                 Password
               </label>
@@ -58,43 +74,57 @@ const Login = () => {
               />
             </div>
 
-            {/* Remember Me & Forgot Password */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-6 sm:mb-8">
+            {/* Confirm Password Input */}
+            <div className="mb-4">
+              <label htmlFor="confirmPassword" className="block text-left text-sm font-semibold text-gray-700 mb-2">
+                Confirm Password
+              </label>
+              <input
+                placeholder='********'
+                type="password"
+                id="confirmPassword"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C41E5B] focus:border-transparent text-gray-700"
+              />
+            </div>
+
+            {/* Agree to Terms */}
+            <div className="mb-6 sm:mb-8">
               <div className="flex items-center gap-2">
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input
                     type="checkbox"
-                    checked={rememberMe}
-                    onChange={(e) => setRememberMe(e.target.checked)}
+                    checked={agreeToTerms}
+                    onChange={(e) => setAgreeToTerms(e.target.checked)}
                     className="sr-only peer"
                   />
                   <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#C41E5B] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gray-300"></div>
-                  <span className="ml-3 text-sm text-gray-600">Remember me</span>
+                  <span className="ml-3 text-sm text-gray-600">
+                    I agree to the{' '}
+                    <a href="/terms-conditions" className="text-[#4A9EDA] hover:text-[#3a8ec8] font-medium">
+                      Terms & Conditions
+                    </a>
+                  </span>
                 </label>
               </div>
-              <a
-                href="#"
-                className="text-sm text-red-600 hover:text-red-700 font-medium"
-              >
-                Forgot Password?
-              </a>
             </div>
 
-            {/* Sign In Button */}
+            {/* Sign Up Button */}
             <button
               type="button"
               className="w-full bg-[#C41E5B] text-white py-3.5 px-6 rounded-lg font-semibold hover:bg-[#b01a51] transition-colors duration-200 mb-6 tracking-wide"
             >
-              SIGN IN
+              SIGN UP
             </button>
 
-            {/* Sign Up Link */}
+            {/* Sign In Link */}
             <div className="text-center">
               <p className="text-gray-600 text-sm">
-                Don't have an account?{' '}
-                <Link to="/signup" className="text-[#4A9EDA] hover:text-[#3a8ec8] font-medium">
-                  Sign up
-                </Link>
+                Already have an account?{' '}
+                <a href="/login" className="text-[#4A9EDA] hover:text-[#3a8ec8] font-medium">
+                  Sign in
+                </a>
               </p>
             </div>
           </div>
@@ -152,7 +182,7 @@ const Login = () => {
                 </h2>
 
                 <p className="text-white text-base xl:text-xl leading-relaxed text-justify">
-                  Login into NXG Markets, the trusted client portal traders for over few years. Trade on MetaTrader - one of the most popular trading platforms in the world. sign-in to your account and continue to the dashboard.
+                  Create your NXG Markets account and join the trusted client portal traders for over few years. Trade on MetaTrader - one of the most popular trading platforms in the world. Sign up now and start your trading journey.
                 </p>
               </div>
             </div>
@@ -163,4 +193,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Signup

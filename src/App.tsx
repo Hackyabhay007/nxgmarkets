@@ -8,6 +8,7 @@ import PrivacyPolicy from './pages/privacy-policy'
 import RefundPolicy from './pages/refund-policy'
 import TermsConditions from './pages/terms-conditions'
 import Login from './pages/login'
+import Signup from './pages/signup'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/aml-policy" element={<AMLPolicy />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
