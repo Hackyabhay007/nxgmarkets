@@ -124,7 +124,6 @@ const Login = () => {
             {/* logo */}
             <div className="mb-12">
               <div className="bg-gray-200 rounded-l-md shadow-md px-4 py-3 overflow-hidden">
-                {" "}
                 <div className="flex items-center justify-between gap-4">
                   <div className="flex items-center gap-3">
                     {/* Logo image */}
