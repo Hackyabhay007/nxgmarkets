@@ -7,6 +7,7 @@ export interface User {
   role: 'user' | 'admin';
 }
 
+
 export const mockUsers: User[] = [
   {
     id: '1',
