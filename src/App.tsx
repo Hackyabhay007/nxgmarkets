@@ -1,6 +1,5 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Footer from "./components/footer";
 import Home from "./pages/home";
 import AMLPolicy from "./pages/aml-policy";
 import ContactUs from "./pages/contact-us";
@@ -27,7 +26,6 @@ function App() {
           <Route path="/terms-conditions" element={<TermsConditions />} />
         </Routes>
       </main>
-      <Footer />
     </div>
   );
 }
