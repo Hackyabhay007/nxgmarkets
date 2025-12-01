@@ -45,7 +45,7 @@ export default function Navbar({
           </button>
 
           {/* Language Selector */}
-          <select className="px-3 py-1.5 transition-colors cursor-pointer">
+          <select className="custom-select px-3 py-1.5 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#b52c61] focus:border-transparent border border-gray-300 rounded">
             <option>English</option>
             <option>Spanish</option>
             <option>French</option>

@@ -13,25 +13,9 @@ import CryptoChill from "./pages/crypto-chill";
 import Invoice from "./pages/invoice";
 import { Toaster } from "react-hot-toast";
 import { ProtectedRoute } from "./components/ProtectedRoute";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import useUser from "./hooks/useUser";
 
 
 function App() {
-
-  const navigate = useNavigate()
-  const { user } = useUser()
-
-
-  useEffect(() => {
-    if (!user) {
-      navigate("/login")
-    } else {
-      navigate("/user/dashboard")
-    }
-  })
-
   return (
     <div className="min-h-screen flex flex-col w-full">
       <main className="w-full flex-1">
@@ -59,9 +43,7 @@ function App() {
           <Route
             path="/user/invoice"
             element={
-              <ProtectedRoute>
-                <Invoice />
-              </ProtectedRoute>
+              <Invoice />
             }
           />
 

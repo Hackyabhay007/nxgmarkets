@@ -326,7 +326,7 @@ export default function Sidebar() {
 
   const handleItemClick = (path: string) => {
     console.log('Parh' , path)
-    if (path === '/user/dashboard' || path ==='/user/deposit/crypto-chill') {
+    if (path === '/user/dashboard' || path ==='/user/deposit/crypto-chill' || path == "/user/invoice" ) {
       navigate(path);
       return;
     }
