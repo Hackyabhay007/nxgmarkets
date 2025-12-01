@@ -118,7 +118,6 @@ export default function Dashboard() {
   const { user } = useUser();
 
 
-  console.log("User" , user)
   return (
     <Layout>
       <Navbar breadcrumb={breadcrumb} balance={0} />

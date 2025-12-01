@@ -313,7 +313,7 @@ export default function Sidebar() {
     "my-admin": true,
   });
   const [depositCrypto, setDepositCrypto] = useState(false)
-  const [activeItem, setActiveItem] = useState<string>("dashboard");
+  const [activeItem] = useState<string>("dashboard");
   const navigate = useNavigate();
 
 
