@@ -69,17 +69,17 @@ const tradingAccounts = [
 const downloadPlatforms = [
   {
     label: "Desktop",
-    icon: "/src/assets/windows.png",
+    icon: "/public/windows.png",
     subText: "Windows",
   },
   {
     label: "iOS",
-    icon: "/src/assets/apple.png",
+    icon: "/public/apple.png",
     subText: "Apple",
   },
   {
     label: "Android",
-    icon: "/src/assets/android.png",
+    icon: "/public/android.png",
     subText: "Google Play",
   },
 ];
@@ -187,7 +187,7 @@ export default function Dashboard() {
                       <div className="flex w-full flex-1 items-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center">
                           <img
-                            src={"/src/assets/mt5_icon.png"}
+                            src={"/public//mt5_icon.png"}
                             alt="mt5_icon"
                             className="h-6"
                           />
@@ -259,7 +259,7 @@ export default function Dashboard() {
               aria-hidden="true"
             >
               <img
-                src={"/src/assets/globe.png"}
+                src={"/public/globe.png"}
                 alt="logo"
                 className="h-full opacity-70"
               />
@@ -297,7 +297,7 @@ export default function Dashboard() {
                 {/* Title */}
                 <div className="flex items-center gap-3">
                   <img
-                    src="/src/assets/mt5_icon.png"
+                    src="/public/mt5_icon.png"
                     alt="MetaTrader 5"
                     className="h-11 w-11"
                   />

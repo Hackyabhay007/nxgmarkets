@@ -59,7 +59,7 @@ export default function InvoicePage() {
         <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
           <div className="flex justify-between items-center mb-8">
             <h1 className="text-3xl font-bold">Payment Invoice</h1>
-            <img src="/src/assets/logo.png" alt="Logo" className="h-10" />
+            <img src="/public/logo.png" alt="Logo" className="h-10" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 text-sm mb-8">

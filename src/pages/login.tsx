@@ -155,7 +155,7 @@ const Login = () => {
                   <div className="flex items-center gap-3">
                     {/* Logo image */}
                     <img
-                      src={"/src/assets/logo.png"}
+                      src={"/public/logo.png"}
                       alt="logo"
                       className="h-10"
                     />
